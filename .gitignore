@@ -1,0 +1,62 @@
+# Large project directories
+/data/
+/models/
+/artifacts/
+/logs/
+/.hf_cache/
+/repos/
+
+# Model weights and checkpoints
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.gguf
+*.h5
+*.hdf5
+*.npy
+*.npz
+
+# Large datasets
+*.parquet
+*.arrow
+*.jsonl.gz
+*.json.gz
+*.tar
+*.tar.gz
+*.zip
+*.zst
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Experiment tracking
+wandb/
+runs/
+tensorboard/
+events.out.tfevents.*
+
+# System / editor
+.DS_Store
+.vscode/
+
+# SSH keys and credentials
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+*credentials*.json
