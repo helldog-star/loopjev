@@ -8,8 +8,8 @@
 - Step1 冻结表示：[使用说明](step1/README.md) · [结果分析](step1/result.md)
 - Step2 末轮监督：[使用说明](step2/README.md) · [结果分析](step2/result.md)
 - Step3 多轮监督：[使用说明](step3/README.md) · [结果分析](step3/result.md)
-- Step4 稠密及外部对照（正式任务已启动，结果待完成）：[使用说明](step4/README.md) · [结果分析与待完成项](step4/result.md)
-- Step5 提前退出：[设计说明](step5/README.md) · [实验状态](step5/result.md)
+- Step4 稠密及外部对照（Qwen与Open-Jev均完成单种子开发评测）：[使用说明](step4/README.md) · [结果分析与待完成项](step4/result.md)
+- Step5 提前退出（A/B完成，C轻量风险头pilot执行中，真实退出待实现）：[设计说明](step5/README.md) · [实验状态](step5/result.md)
 - [环境与下载](setup/README.md) · [公共工具](common/README.md)
 
 ## 文档与产物

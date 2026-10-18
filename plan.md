@@ -40,7 +40,7 @@ Ouro 的门是 token 级、按语言模型损失训练；LoopJev 的退出是决
 
 ## 方法约定
 
-- 已按 Open-Jev `bd4118882f733574a3250a4b65fe4d884130c08b` 的 `api.py` 核验 candidate renderer，一致性检查通过；只读参考在 `repos/openjev-reference/`。训练代码位于本项目 `scripts/`，JevK5 仅作参考。模型输入仅包含 state/question 和当前候选，使用 Ouro chat template。
+- 已按 Open-Jev `bd4118882f733574a3250a4b65fe4d884130c08b` 的 `api.py` 核验 candidate renderer，一致性检查通过；固定官方源码在 `repos/Open-Jev/`。训练代码位于本项目 `scripts/`，JevK5 仅作参考。模型输入仅包含 state/question 和当前候选，使用 Ouro chat template。
 - 每个候选独立编码，可批量前向；记录候选顺序、长度和截断率，读取最后一个非-padding token。同一题候选同步置换 options 和 target；choice loss 按 decision row 归一。
 - 共享 `Linear(hidden_size, 1)`；choice 在候选维度 softmax。noul 定义 `p_yes=sigmoid(z)`、`p_no=1-p_yes`，target 顺序严格为 `[no, yes]`。
 - 头可用 `lm_head` 的 `Yes − No` 行初始化，bias 为 0；先核对真实 prompt 后缀下的 token ID。

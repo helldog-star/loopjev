@@ -41,6 +41,8 @@ __pycache__/
 /.envs/*
 !/.envs/README.md
 !/.envs/openjev-environment.yml
+!/.envs/openjev-requirements.txt
+!/.envs/loopjev-requirements.txt
 .venv/
 venv/
 env/

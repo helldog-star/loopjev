@@ -7,6 +7,7 @@ import sys
 
 SCRIPTS = Path(__file__).resolve().parent
 ENTRIES = {
+    'step5': {'offline': 'step5/offline_exit.py', 'test': 'step5/test_offline_exit.py', 'analyze': 'step5/analyze_exit.py', 'test-analysis': 'step5/test_analyze_exit.py', 'joint': 'step5/joint_exit.py', 'test-joint': 'step5/test_joint_exit.py', 'risk-data': 'step5/risk_data.py', 'risk-fit': 'step5/risk_fit.py', 'risk-all': 'step5/run_risk.sh', 'test-risk': 'step5/test_risk.py'},
     'setup': {'env': 'setup/setup_env.sh', 'download': 'setup/download_assets.py'},
     'step0': {'smoke': 'step0/step0_smoke.py'},
     'step1': {'extract': 'step1/step1_extract.py', 'probe': 'step1/step1_probe.py', 'finish': 'step1/step1_finish.py'},
@@ -23,7 +24,6 @@ def main():
         for step, commands in ENTRIES.items():
             print(f'  {step}: {", ".join(commands)}')
         print('例: python scripts/run.py step3 train --help')
-        print('Step 5 尚无执行脚本；参见对应 README。')
         return
     if len(args) < 2 or args[0] not in ENTRIES or args[1] not in ENTRIES[args[0]]:
         raise SystemExit('未知阶段或命令；使用 --list 查看可用入口。')
@@ -34,7 +34,7 @@ def main():
     os.chdir(SCRIPTS.parent)
     if entry.suffix == '.sh':
         os.execv('/bin/bash', ['/bin/bash', str(entry), *args[2:]])
-    sys.path[:0] = [str(SCRIPTS / name) for name in ['common', 'step0', 'step1', 'step2', 'step3', 'step4', 'setup']]
+    sys.path[:0] = [str(SCRIPTS / name) for name in ['common', 'step0', 'step1', 'step2', 'step3', 'step4', 'step5', 'setup']]
     from runtime_paths import configure
     configure()
     sys.argv = [str(entry), *args[2:]]

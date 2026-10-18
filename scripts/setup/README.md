@@ -9,10 +9,11 @@
 
 ## 当前状态与注意事项
 
-服务器已有可用环境，已完成 Step 0–2，Step 3 正在运行。
+服务器已有loopjev主环境和openjev独立环境；用途和重建方法见
+[环境文档](../../.envs/README.md)。
 不要在训练过程中重建环境或升级依赖。
 现有实验协议记录 torch 2.8.0+cu128、transformers 4.55.0、peft 0.21.2。
-安装脚本并未锁死所有包版本；复现实验应以对应 protocol.json 的包版本为准。
+安装脚本并未锁死所有包版本；复现实验应对照.envs/loopjev-requirements.txt及对应protocol.json。
 
 下载脚本当前启用的任务只有 `openjev2b`，Ouro 与数据集任务在源码中被注释。
 不要以为执行它会自动下载所有项目资源。默认 HF_ENDPOINT 为 hf-mirror.com，

@@ -58,9 +58,12 @@
 - 提交自己的代码、研究文档、外部源码URL/固定commit及已审阅的依赖快照；
   不提交完整第三方仓库、Conda环境、模型、数据、缓存、日志或实验大产物。
 - 外部版本统一记录在repos/README.md；环境重建说明在.envs/README.md，
-  Pip快照在configs/openjev-requirements.txt，Conda快照在.envs/openjev-environment.yml。
+  Pip快照在.envs/openjev-requirements.txt，Conda快照在.envs/openjev-environment.yml。
 - 导出时使用目标环境的Python；提交前移除机器prefix、绝对路径editable依赖和凭据，
   固定VCS依赖commit，不用示例版本替代实际安装版本。
 - 修改依赖或外部源码版本后同步元数据；第三方改动用patch或fork固定commit保存。
 - 使用明确路径暂存并检查git diff --cached；验证大目录被忽略、必要元数据可跟踪。
   .gitignore不影响已有跟踪项；若发现误跟踪，先确认范围再只从索引移除，不删除实体数据。
+
+- 环境说明及依赖快照统一放.envs/，不为同一用途另建configs目录。主loopjev环境用于
+  Ouro、Qwen及CPU比较，openjev独立环境用于外部模型推理；命令显式选择解释器。
