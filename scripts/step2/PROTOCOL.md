@@ -84,6 +84,9 @@ span, wall time, trainable/frozen parameters, peak allocated memory and actual
 loops. Device timeline includes host gaps and is not active GPU kernel time.
 Checkpoint recomputation and cached head training have different costs; equal
 steps are not equal FLOPs. FLOPs are not measured by these scripts.
+The protocol also references original frozen-cache extraction time, including
+its reused-candidate counts; this is historical incremental extraction cost,
+not a complete cold-start estimate for head-only training.
 Inference measures full decision rows using a fixed first-32 validation subset,
 one warmup pass and three timed passes, including forward and head on pretokenized
 inputs. Compare actual latency; do not infer speedups from offline selected depth.
@@ -98,3 +101,14 @@ Single-seed, source-balanced choice results remain development evidence; the
 retrieval control has few groups and is not a matched causal control. Step2 does
 not establish multi-loop supervision, adaptive-exit gains, OOD robustness or
 RLCD replication.
+
+## Script validation
+
+All four conditions passed a one-update smoke on eight rows/split. The checks
+covered prompt/data/model hashes, actual two/four runtime loops, frozen-prefix
+agreement, head and adapter updates, adapter save/reload, metrics and paired
+comparison. In the four-loop LoRA check, non-reentrant checkpoint gradients
+matched ordinary backward for all 96 trainable adapter tensors (maximum absolute
+difference 0). Reloaded adapter hidden states differed from saved FP16 features
+by at most .125, within the prescribed BF16 tolerance. Smoke metrics are not
+scientific results; temporary tensors/adapters are removed after verification.

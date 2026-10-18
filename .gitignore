@@ -37,6 +37,7 @@ __pycache__/
 .ruff_cache/
 
 # Environments
+/.envs/
 .venv/
 venv/
 env/
@@ -60,3 +61,5 @@ events.out.tfevents.*
 id_rsa*
 id_ed25519*
 *credentials*.json
+
+/work/

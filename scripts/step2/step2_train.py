@@ -370,6 +370,8 @@ def main():
         "limitations": ["single-seed development; previously inspected validation", "source-balanced choice only",
                         "small retrieval group is not a matched causal control", "equal updates do not imply equal FLOPs"],
         "source_cache_sha256": {split: fingerprint(Path(args.cache_dir) / f"{split}.pt") for split in SPLITS},
+        "original_cache_extraction": {split: {key: caches[split]["report"].get(key) for key in
+            ["elapsed_seconds", "candidates", "reused_candidates"]} for split in SPLITS},
         "model_provenance": caches["train"]["config"],
         "scripts_sha256": {name: fingerprint(Path(__file__).with_name(name)) for name in
             ["step2_train.py", "step2_evaluate.py", "step2_compare.py", "step1_common.py", "step1_finish.py", "step1_probe.py"]},

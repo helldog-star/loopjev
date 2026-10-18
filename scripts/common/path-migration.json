@@ -1,0 +1,56 @@
+{
+  "removed_links": {
+    "setup_env.sh": "setup/setup_env.sh",
+    "download_assets.py": "setup/download_assets.py",
+    "step0_smoke.py": "step0/step0_smoke.py",
+    "step1_extract.py": "step1/step1_extract.py",
+    "step1_probe.py": "step1/step1_probe.py",
+    "step1_common.py": "common/step1_common.py",
+    "step1_finish.py": "step1/step1_finish.py",
+    "step2_train.py": "step2/step2_train.py",
+    "step2_evaluate.py": "step2/step2_evaluate.py",
+    "step2_compare.py": "step2/step2_compare.py",
+    "STEP2.md": "step2/PROTOCOL.md",
+    "step3_train.py": "step3/step3_train.py",
+    "step3_compare.py": "step3/step3_compare.py",
+    "run_step3.sh": "step3/run_step3.sh",
+    "STEP3.md": "step3/PROTOCOL.md"
+  },
+  "unchanged_source_sha256": {
+    "setup/download_assets.py": "c618a332fa885bd4cfcbfc093b4e187cf19dfe3a5a4181cfe050996f366f5409",
+    "step0/step0_smoke.py": "b5579da6eed88c53a211ee9b22152fa69d091484cb1170aded83cdf7dd943990",
+    "common/step1_common.py": "6b92958cbefd5aa916ebdac9008aafd607690d55a1be506d96c860fec7cbecf8",
+    "step1/step1_extract.py": "4484ef79b1e923d724085cba18e1d367dbc68485511ad667ae9aec7e18385eec",
+    "step1/step1_probe.py": "1000827fffe0344cd5c928be3edd19693ad1f3609e39336a8540b5f19de41c44",
+    "step1/step1_finish.py": "bd0610389bd80418da4e73768f8353a7abc0e4631a6de0fadef0245f3adacf21",
+    "step2/step2_train.py": "7aaf042863f23ea8c30da447326e23ffe2ed58a52e3e8087df0d9366c797123e",
+    "step2/step2_evaluate.py": "5cc5c8dc9ee432453396aff0fa4edfc000f0a1099dbf17872615225597420c15",
+    "step2/step2_compare.py": "49776945538557290723a404d4686b2ffcb367b59334a09ae4938c9a88b6883c",
+    "step3/step3_train.py": "5c2362c124b0e4001e522ff708fde0bbb81837c98a9c5533754f04135f9c689f",
+    "step3/step3_compare.py": "ea72c1839a343263cef0ab5f349cf6b15615d83537e4e653c6b4897993a10262",
+    "step4/dense_train.py": "35166eda03fe300c2dfac0b418c5332014e5951f5275dcef82e691690d161fc2",
+    "step4/dense_compare.py": "0dc5b933831a95a5fa59da2940d86395de48fc934ef1105b8a5857cdd7e47abf",
+    "step4/test_dense.py": "4bd6c0646dbbeefeea5d7723c53677c3583a0697d0a3beda1b01392b69bb18a6",
+    "step4/openjev_compare.py": "4de7b67b42b39cc19f205672e055287519d503eeb92b337e9dece074d64fa91e",
+    "step4/test_openjev.py": "ce41072ea52db48d91902f9e28ef056e2f07ad23ef2f3613624d4e1076f0b2d3"
+  },
+  "notes": "Only path resolution changed. Historical protocols and result hashes were not edited. All experiment hashes use actual source bytes.",
+  "validation": {
+    "historical_source_hashes": "passed",
+    "entry_help_from_tmp": 12,
+    "step4_cpu_tests": 6,
+    "shell_syntax": "passed",
+    "step3_comparisons": "both completed"
+  },
+  "removed_obsolete_bytecode": [
+    "scripts/__pycache__/step1_extract.cpython-311.pyc",
+    "scripts/__pycache__/step1_probe.cpython-311.pyc",
+    "scripts/__pycache__/step1_common.cpython-311.pyc",
+    "scripts/__pycache__/step1_finish.cpython-311.pyc",
+    "scripts/__pycache__/step2_train.cpython-311.pyc",
+    "scripts/__pycache__/step2_evaluate.cpython-311.pyc",
+    "scripts/__pycache__/step2_compare.cpython-311.pyc",
+    "scripts/__pycache__/step3_train.cpython-311.pyc",
+    "scripts/__pycache__/step3_compare.cpython-311.pyc"
+  ]
+}

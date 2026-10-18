@@ -69,6 +69,10 @@ def compare(candidate, reference, repeats):
     latency, baseline_latency = candidate["metrics"]["latency"], reference["metrics"]["latency"]
     if latency["row_ids"] != baseline_latency["row_ids"]:
         raise ValueError("Latency benchmark rows differ")
+    if any(latency[key] != baseline_latency[key] for key in ["candidate_batch", "repeats", "warmup_passes", "scope"]):
+        raise ValueError("Latency benchmark settings differ")
+    if candidate["protocol"]["gpu"] != reference["protocol"]["gpu"]:
+        raise ValueError("GPU hardware differs")
     result["mean_latency_ratio"] = latency["mean_seconds_per_decision"] / baseline_latency["mean_seconds_per_decision"]
     result["latency_limitations"] = "ratio of measured pass means; no significance or FLOP claim"
     result["training_cost"] = {"candidate": candidate["metrics"]["training_cost"],
