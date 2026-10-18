@@ -4,7 +4,8 @@
 /artifacts/
 /logs/
 /.hf_cache/
-/repos/
+/repos/*
+!/repos/README.md
 
 # Model weights and checkpoints
 *.safetensors
@@ -37,7 +38,9 @@ __pycache__/
 .ruff_cache/
 
 # Environments
-/.envs/
+/.envs/*
+!/.envs/README.md
+!/.envs/openjev-environment.yml
 .venv/
 venv/
 env/

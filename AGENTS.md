@@ -52,3 +52,15 @@
   不使用宽泛删除通配符，不为每次编辑生成永久备份，不删除仍有复用价值的实验产物。
 - 冻结模型的已有特征可供其他读出器复用；模型权重或提示词改变后必须重新提取特征。
 - 汇报清理范围即可；解释已有结果时不擅自启动无关实验。
+
+## Git与复现元数据
+
+- 提交自己的代码、研究文档、外部源码URL/固定commit及已审阅的依赖快照；
+  不提交完整第三方仓库、Conda环境、模型、数据、缓存、日志或实验大产物。
+- 外部版本统一记录在repos/README.md；环境重建说明在.envs/README.md，
+  Pip快照在configs/openjev-requirements.txt，Conda快照在.envs/openjev-environment.yml。
+- 导出时使用目标环境的Python；提交前移除机器prefix、绝对路径editable依赖和凭据，
+  固定VCS依赖commit，不用示例版本替代实际安装版本。
+- 修改依赖或外部源码版本后同步元数据；第三方改动用patch或fork固定commit保存。
+- 使用明确路径暂存并检查git diff --cached；验证大目录被忽略、必要元数据可跟踪。
+  .gitignore不影响已有跟踪项；若发现误跟踪，先确认范围再只从索引移除，不删除实体数据。
